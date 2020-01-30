@@ -1,0 +1,31 @@
+{
+  "name": "poker-server-ts",
+  "version": "0.1.0",
+  "description": "Node Koa TypeScript Server for poker",
+  "main": "index,ts",
+  "scripts": {
+    "watch-server": "nodemon --watch 'src/**/*' -e ts,tsx --exec ts-node ./src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stacon/node-poker-server-ts.git"
+  },
+  "author": "Constantinos Stathis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stacon/node-poker-server-ts/issues"
+  },
+  "homepage": "https://github.com/stacon/node-poker-server-ts#readme",
+  "dependencies": {
+    "koa": "^2.11.0",
+    "koa-router": "^8.0.6"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.11.0",
+    "@types/koa-router": "^7.4.0",
+    "nodemon": "^2.0.2",
+    "ts-node": "^8.6.2",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.5"
+  }
+}
