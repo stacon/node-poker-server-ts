@@ -1,16 +1,20 @@
-import Koa from 'koa';
-import Router from 'koa-router';
+import http from 'http';
 
-const app = new Koa;
+// import store from './store/store';
 
-const router = new Router();
+import config from './env/dev.config';
+import appendSocketsController from './models/Socket/socket.controller';
+import store from './models/app.store';
 
-router.get('/*', async (ctx) => {
-    ctx.body = 'Hello World!';
+const server = http.createServer((req,resp) => {
+  resp.statusCode = 200;
+  resp.write("Server state is available by dev tools")
+  resp.end()
 });
 
-app.use(router.routes());
+appendSocketsController(server, store);
 
-app.listen(3000);
+server
+server.listen(config.PORT);
 
-console.log('Server running on port 3000');
+console.log(`Server running on port ${config.PORT}`);
